@@ -54,7 +54,7 @@ module.exports = function (grunt)
 					'templates/ncss/**'
 				],
 				dest: 'build',
-				cwd: 'vendor/redaxmedia/redaxscript/templates/default',
+				cwd: 'vendor/redaxmedia/ncss-template/',
 				expand: true
 			}
 		}
