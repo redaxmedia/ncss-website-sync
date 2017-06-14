@@ -1,0 +1,32 @@
+language: php
+
+php:
+- 7.1
+
+before_install:
+- composer global require hirak/prestissimo
+
+install:
+- sudo apt-get install lftp fontforge
+- composer self-update
+- composer install
+- nvm install 6
+- npm install --global ied
+- npm install --global grunt-cli
+- IED_CACHE_DIR=.tmp ied install
+- cd vendor/redaxmedia/ncss-template && IED_CACHE_DIR=.tmp ied install && cd -
+- cd vendor/redaxmedia/redaxscript && IED_CACHE_DIR=.tmp ied install && cd -
+
+script:
+- replace 'vendor/redaxmedia' '..' -- vendor/redaxmedia/ncss-template/templates/ncss/assets/styles/_ncss.css
+- grunt build --gruntfile vendor/redaxmedia/ncss-template/gruntfile.js
+- grunt build --gruntfile vendor/redaxmedia/redaxscript/gruntfile.js
+- grunt
+- sh config.sh
+
+after_success:
+- lftp $FTP_URL -e "glob -d mirror build . --reverse --delete-first --parallel=10 && chmod 0444 config.php && exit"
+
+notifications:
+ email:
+ - info@redaxmedia.com

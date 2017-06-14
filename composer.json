@@ -1,0 +1,34 @@
+{
+	"name": "redaxmedia/ncss-website-sync",
+	"description": "Yet another cronjob for NCSS's website",
+	"version": "3.2.0",
+	"homepage": "https://ncss.io",
+	"license": "GPL-3.0",
+	"repositories":
+	[
+		{
+			"type": "git",
+			"url": "https://github.com/redaxmedia/ncss-template.git"
+		}
+	],
+	"require":
+	{
+		"php": ">5.4"
+	},
+	"require-dev":
+	{
+		"redaxmedia/ncss-template": "dev-master",
+		"redaxmedia/redaxscript": "dev-master"
+	},
+	"scripts":
+	{
+		"post-install-cmd":
+		[
+			"cd vendor/redaxmedia/redaxscript && composer install"
+		],
+		"post-update-cmd":
+		[
+			"@post-install-cmd"
+		]
+	}
+}
