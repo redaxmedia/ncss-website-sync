@@ -18,7 +18,7 @@
 	"require-dev":
 	{
 		"redaxmedia/ncss-template": "dev-master",
-		"redaxmedia/redaxscript": "dev-master"
+		"redaxmedia/redaxscript": "dev-harmonize-fix"
 	},
 	"scripts":
 	{
