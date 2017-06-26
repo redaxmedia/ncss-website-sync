@@ -2,6 +2,7 @@
 
 replace 'UA-00000000-0' 'UA-16122280-17' -- build/modules/Analytics/assets/scripts/init.js
 replace 'auto' 'ncss.io' -- build/modules/Analytics/assets/scripts/init.js
+replace 'atom-one-dark.min.css' 'monokai-sublime.min.css' -- build/modules/SyntaxHighlighter/SyntaxHighlighter.php
 echo sitemap: https://ncss.io/sitemap_xml > build/robots.txt
 
 cd build
