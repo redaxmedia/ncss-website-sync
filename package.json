@@ -1,7 +1,7 @@
 {
 	"name": "ncss-website-sync",
 	"description": "Yet another cronjob for NCSS's website",
-	"version": "3.2.0",
+	"version": "3.2.1",
 	"homepage": "https://ncss.io",
 	"license": "GPL-3.0",
 	"author":
