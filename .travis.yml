@@ -18,7 +18,7 @@ install:
 - cd vendor/redaxscript/redaxscript && IED_CACHE_DIR=.tmp ied install && cd -
 
 script:
-- replace 'vendor/redaxscript' '..' -- vendor/redaxmedia/ncss-template/templates/ncss/assets/styles/_ncss.css
+- replace 'vendor/redaxscript' '../../../../../../redaxscript' -- vendor/redaxmedia/ncss-template/templates/ncss/assets/styles/_ncss.css
 - grunt build --gruntfile vendor/redaxmedia/ncss-template/gruntfile.js
 - grunt build --gruntfile vendor/redaxscript/redaxscript/gruntfile.js
 - grunt
