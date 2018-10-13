@@ -10,7 +10,7 @@ module.exports = grunt =>
 			[
 				'build'
 			],
-			dest: 'www/htdocs/w00976cb/ncss-relaunch',
+			dest: 'www/htdocs/w00976cb/ncss',
 			options:
 			{
 				url: process.env.FTP_URL,
