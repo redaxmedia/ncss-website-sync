@@ -3,7 +3,7 @@ name: ci
 on: [ push, pull_request ]
 
 jobs:
- lint:
+ deploy:
   runs-on: ubuntu-latest
   steps:
   - name: Checkout
@@ -16,6 +16,7 @@ jobs:
     uses: actions/setup-node@v1
     with:
      node-version: 15
+  - run: sudo apt install lftp
   - run: composer install 
   - run: npm install
   - run: npm install --prefix=vendor/redaxmedia/ncss-template
@@ -27,3 +28,5 @@ jobs:
   - run: node_modules/.bin/grunt config
   - run: node_modules/.bin/grunt lock
   - run: node_modules/.bin/grunt deploy
+    env:
+     FTP_URL: ${{ secrets.FTP_URL }}
