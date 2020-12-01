@@ -26,6 +26,8 @@ jobs:
   - run: grunt build --gruntfile=vendor/redaxscript/redaxscript/gruntfile.js
   - run: grunt copy
   - run: grunt config
+    env:
+     DB_URL: ${{ secrets.DB_URL }}
   - run: grunt lock
   - run: grunt deploy
     env:
