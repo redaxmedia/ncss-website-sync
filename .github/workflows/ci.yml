@@ -3,7 +3,7 @@ name: ci
 on: [ push, pull_request ]
 
 jobs:
- deploy:
+ sync:
   runs-on: ubuntu-latest
   steps:
   - name: Checkout
@@ -22,8 +22,8 @@ jobs:
   - run: npm install --prefix=vendor/redaxmedia/ncss-template
   - run: npm install --prefix=vendor/redaxscript/redaxscript
   - run: grunt shell:configTemplates
-  - run: grunt build --gruntfile vendor/redaxmedia/ncss-template/gruntfile.js
-  - run: grunt build --gruntfile vendor/redaxscript/redaxscript/gruntfile.js
+  - run: grunt build --gruntfile=vendor/redaxmedia/ncss-template/gruntfile.js
+  - run: grunt build --gruntfile=vendor/redaxscript/redaxscript/gruntfile.js
   - run: grunt copy
   - run: grunt config
   - run: grunt lock
