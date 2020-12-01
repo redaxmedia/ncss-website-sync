@@ -8,7 +8,7 @@ module.exports = () =>
 			[
 				'cd build',
 				'php console.php config parse --db-url $DB_URL --halt-on-error',
-				'php console.php status database'
+				'php console.php status database --halt-on-error'
 			]
 			.join('&&')
 		},
