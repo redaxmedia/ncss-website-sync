@@ -12,6 +12,14 @@ module.exports = () =>
 			]
 			.join('&&')
 		},
+		configTemplates:
+		{
+			command:
+			[
+				'replace \'vendor/redaxscript\' \'../../redaxscript\' -- vendor/redaxmedia/ncss-template/templates/ncss/assets/styles/_ncss.css'
+			]
+			.join('&&')
+		},
 		configModules:
 		{
 			command:

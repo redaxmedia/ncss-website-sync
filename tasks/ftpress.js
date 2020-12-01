@@ -8,12 +8,13 @@ module.exports = () =>
 			[
 				'build'
 			],
-			dest: 'www/htdocs/w00976cb/ncss',
+			dest: 'ncss',
 			options:
 			{
 				url: process.env.FTP_URL,
 				command:
 				[
+					'debug 1',
 					'set sftp:auto-confirm yes',
 					'mirror {SOURCE} {TARGET}-new-{TIMESTAMP} --reverse --delete-first --parallel=10 --use-pget-n=10',
 					'chmod 0444 {TARGET}-new-{TIMESTAMP}/config.php',
