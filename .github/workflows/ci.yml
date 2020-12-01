@@ -21,12 +21,12 @@ jobs:
   - run: npm install
   - run: npm install --prefix=vendor/redaxmedia/ncss-template
   - run: npm install --prefix=vendor/redaxscript/redaxscript
-  - run: replace 'vendor/redaxscript' '../../redaxscript' -- vendor/redaxmedia/ncss-template/templates/ncss/assets/styles/_ncss.css
+  - run: grunt shell:configTemplates
   - run: grunt build --gruntfile vendor/redaxmedia/ncss-template/gruntfile.js
   - run: grunt build --gruntfile vendor/redaxscript/redaxscript/gruntfile.js
-  - run: node_modules/.bin/grunt copy
-  - run: node_modules/.bin/grunt config
-  - run: node_modules/.bin/grunt lock
-  - run: node_modules/.bin/grunt deploy
+  - run: grunt copy
+  - run: grunt config
+  - run: grunt lock
+  - run: grunt deploy
     env:
      FTP_URL: ${{ secrets.FTP_URL }}
