@@ -19,8 +19,6 @@ jobs:
   - run: sudo apt install lftp
   - run: composer install 
   - run: npm install
-  - run: npm install --prefix=vendor/redaxmedia/ncss-template
-  - run: npm install --prefix=vendor/redaxscript/redaxscript
   - run: grunt shell:configTemplates
   - run: grunt build --gruntfile=vendor/redaxmedia/ncss-template/gruntfile.js
   - run: grunt build --gruntfile=vendor/redaxscript/redaxscript/gruntfile.js
