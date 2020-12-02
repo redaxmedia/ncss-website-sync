@@ -20,7 +20,8 @@ module.exports = () =>
 					'mv {TARGET}-new-{TIMESTAMP} {TARGET}',
 					'rm -rf {TARGET}-old-{TIMESTAMP}',
 					'exit'
-				]
+				],
+				haltOnError: true
 			}
 		}
 	};
