@@ -16,5 +16,9 @@
 		"grunt-ftpress": "1.5.1",
 		"grunt-shell": "3.0.1",
 		"load-grunt-tasks": "5.1.0"
+	},
+	"scripts":
+	{
+		"postinstall": "npm install --prefix=vendor/redaxscript/redaxscript && npm install --prefix=vendor/redaxmedia/ncss-template"
 	}
 }
