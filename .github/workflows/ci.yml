@@ -20,8 +20,8 @@ jobs:
   - run: composer install 
   - run: npm install
   - run: grunt shell:configTemplates
-  - run: grunt build --gruntfile=vendor/redaxmedia/ncss-template/gruntfile.js
   - run: grunt build --gruntfile=vendor/redaxscript/redaxscript/gruntfile.js
+  - run: grunt build --gruntfile=vendor/redaxmedia/ncss-template/gruntfile.js
   - run: grunt copy
   - run: grunt config
     env:
